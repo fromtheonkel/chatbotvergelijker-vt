@@ -1,5 +1,4 @@
-import { Button } from "@/components/ui/button"
-import { ArrowRight, Bot } from "lucide-react"
+import { Bot } from "lucide-react"
 
 export function HeroSection() {
   return (
@@ -21,18 +20,8 @@ export function HeroSection() {
             met onze uitgebreide vergelijking van functies, prijzen en klantervaringen.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-[#2ECC71] hover:bg-[#27AE60] text-white">
-              Start Gratis Vergelijking
-              <ArrowRight className="ml-2 h-5 w-5" />
-            </Button>
-            <Button size="lg" variant="outline" className="bg-white text-[#4A90E2] border-[#4A90E2] hover:bg-[#EBF4FF]">
-              Bekijk Demo
-            </Button>
-          </div>
-
-          <div className="mt-12 text-sm text-gray-500">
-            <p>Vertrouwd door 500+ Nederlandse bedrijven</p>
+          <div className="mt-12 text-lg text-gray-600 max-w-4xl mx-auto">
+            <p>Verhoog je klanttevredenheid en zorg dat je 24 uur bereikbaar bent met een op maat gemaakte eigen chatbot</p>
           </div>
         </div>
       </div>

@@ -1,5 +1,6 @@
 "use client"
 
+import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Menu, X } from "lucide-react"
 import { useState } from "react"
@@ -13,7 +14,9 @@ export function Header() {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <img src="/mijnchatbot-logo.svg" alt="mijnchatbot" className="h-10 w-auto" />
+            <Link href="/" className="hover:opacity-80 transition-opacity">
+              <img src="/mijnchatbot_logo.svg" alt="mijnchatbot" className="h-16 w-auto" />
+            </Link>
           </div>
 
           {/* Desktop Navigation */}
@@ -21,9 +24,9 @@ export function Header() {
             <a href="#comparison" className="text-gray-700 hover:text-[#2ECC71] transition-colors">
               Vergelijking
             </a>
-            <a href="#features" className="text-gray-700 hover:text-[#2ECC71] transition-colors">
-              Functies
-            </a>
+            <Link href="/blog" className="text-gray-700 hover:text-[#2ECC71] transition-colors">
+              Blog
+            </Link>
             <a href="#testimonials" className="text-gray-700 hover:text-[#2ECC71] transition-colors">
               Reviews
             </a>
@@ -34,7 +37,9 @@ export function Header() {
 
           {/* CTA Button */}
           <div className="hidden md:block">
-            <Button className="bg-[#2ECC71] hover:bg-[#27AE60] text-white">Start Vergelijking</Button>
+            <Button asChild className="bg-[#2ECC71] hover:bg-[#27AE60] text-white">
+              <Link href="/vergelijking">Start Vergelijking</Link>
+            </Button>
           </div>
 
           {/* Mobile menu button */}
@@ -52,16 +57,18 @@ export function Header() {
               <a href="#comparison" className="text-gray-700 hover:text-[#2ECC71] transition-colors">
                 Vergelijking
               </a>
-              <a href="#features" className="text-gray-700 hover:text-[#2ECC71] transition-colors">
-                Functies
-              </a>
+              <Link href="/blog" className="text-gray-700 hover:text-[#2ECC71] transition-colors">
+                Blog
+              </Link>
               <a href="#testimonials" className="text-gray-700 hover:text-[#2ECC71] transition-colors">
                 Reviews
               </a>
               <a href="#contact" className="text-gray-700 hover:text-[#2ECC71] transition-colors">
                 Contact
               </a>
-              <Button className="bg-[#2ECC71] hover:bg-[#27AE60] text-white w-full">Start Vergelijking</Button>
+              <Button asChild className="bg-[#2ECC71] hover:bg-[#27AE60] text-white w-full">
+                <Link href="/vergelijking">Start Vergelijking</Link>
+              </Button>
             </nav>
           </div>
         )}

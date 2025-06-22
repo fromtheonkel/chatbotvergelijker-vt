@@ -1,4 +1,4 @@
-import { Facebook, Twitter, Linkedin, Mail, Phone, MapPin } from "lucide-react"
+import { Facebook, Twitter, Linkedin, Mail, MapPin } from "lucide-react"
 
 export function Footer() {
   return (
@@ -32,17 +32,12 @@ export function Footer() {
                 </a>
               </li>
               <li>
-                <a href="#features" className="text-gray-300 hover:text-[#2ECC71] transition-colors">
-                  Functies
-                </a>
-              </li>
-              <li>
                 <a href="#testimonials" className="text-gray-300 hover:text-[#2ECC71] transition-colors">
                   Reviews
                 </a>
               </li>
               <li>
-                <a href="#" className="text-gray-300 hover:text-[#2ECC71] transition-colors">
+                <a href="/blog" className="text-gray-300 hover:text-[#2ECC71] transition-colors">
                   Blog
                 </a>
               </li>
@@ -85,12 +80,8 @@ export function Footer() {
                 <span className="text-gray-300">info@mijnchatbot.nl</span>
               </div>
               <div className="flex items-center gap-3">
-                <Phone className="h-5 w-5 text-[#2ECC71]" />
-                <span className="text-gray-300">+31 20 123 4567</span>
-              </div>
-              <div className="flex items-center gap-3">
                 <MapPin className="h-5 w-5 text-[#2ECC71]" />
-                <span className="text-gray-300">Amsterdam, Nederland</span>
+                <span className="text-gray-300">Apeldoorn, Nederland</span>
               </div>
             </div>
           </div>

@@ -1,0 +1,38 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="200" height="200" fill="#ffffff"/>
+  
+  <!-- Three speech bubbles representing different chatbots to compare - centered -->
+  <!-- Left bubble -->
+  <circle cx="65" cy="80" r="16" fill="#4A90E2" opacity="0.8"/>
+  <circle cx="61" cy="76" r="2.2" fill="white"/>
+  <circle cx="69" cy="76" r="2.2" fill="white"/>
+  <circle cx="65" cy="84" r="2.2" fill="white"/>
+  <path d="M 56 92 L 51 100 L 60 96 Z" fill="#4A90E2" opacity="0.8"/>
+  
+  <!-- Middle bubble (slightly elevated and larger for emphasis) -->
+  <circle cx="100" cy="75" r="20" fill="#2ECC71" opacity="0.9"/>
+  <circle cx="95" cy="70" r="2.8" fill="white"/>
+  <circle cx="105" cy="70" r="2.8" fill="white"/>
+  <circle cx="100" cy="80" r="2.8" fill="white"/>
+  <path d="M 89 90 L 83 99 L 94 95 Z" fill="#2ECC71" opacity="0.9"/>
+  
+  <!-- Right bubble -->
+  <circle cx="135" cy="80" r="16" fill="#E74C3C" opacity="0.8"/>
+  <circle cx="131" cy="76" r="2.2" fill="white"/>
+  <circle cx="139" cy="76" r="2.2" fill="white"/>
+  <circle cx="135" cy="84" r="2.2" fill="white"/>
+  <path d="M 144 92 L 149 100 L 140 96 Z" fill="#E74C3C" opacity="0.8"/>
+  
+  <!-- Subtle comparison arrows between bubbles -->
+  <path d="M 82 82 L 88 82" stroke="#7F8C8D" stroke-width="1.5" opacity="0.5"/>
+  <path d="M 86 80 L 88 82 L 86 84" stroke="#7F8C8D" stroke-width="1.5" fill="none" opacity="0.5"/>
+  
+  <path d="M 112 82 L 118 82" stroke="#7F8C8D" stroke-width="1.5" opacity="0.5"/>
+  <path d="M 116 80 L 118 82 L 116 84" stroke="#7F8C8D" stroke-width="1.5" fill="none" opacity="0.5"/>
+  
+  <!-- Website name - centered -->
+  <text x="100" y="135" font-family="'Inter', 'SF Pro Display', -apple-system, sans-serif" font-size="24" font-weight="500" fill="#2E5BBA" letter-spacing="-0.5px" text-anchor="middle">
+    mijnchatbot
+  </text>
+</svg>

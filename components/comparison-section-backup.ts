@@ -13,6 +13,7 @@ import {
 function getCompanyPros(company: Company): string[] {
   const pros: string[] = []
 
+  // Add pros based on company data
   if (company.service.support_hours === "24/7") {
     pros.push("24/7 Nederlandse support")
   }
@@ -45,6 +46,7 @@ function getCompanyPros(company: Company): string[] {
     pros.push("Sentiment analyse")
   }
 
+  // Add specific pros based on company
   if (company.id === "watermelon-business") {
     pros.push("Onbeperkte gesprekken")
     pros.push("100+ talen ondersteuning")
@@ -60,12 +62,13 @@ function getCompanyPros(company: Company): string[] {
     pros.push("Geleidelijke automatisering")
   }
 
-  return pros.slice(0, 4)
+  return pros.slice(0, 4) // Max 4 pros
 }
 
 function getCompanyCons(company: Company): string[] {
   const cons: string[] = []
 
+  // Add cons based on company data
   if (getMonthlyStartingPrice(company) > 300) {
     cons.push("Hogere maandelijkse kosten")
   }
@@ -97,6 +100,7 @@ function getCompanyCons(company: Company): string[] {
     cons.push("Geen sentiment analyse")
   }
 
+  // Add specific cons based on company
   if (company.id === "certigon-maatwerk") {
     cons.push("Complexe setup vereist")
   }
@@ -105,7 +109,7 @@ function getCompanyCons(company: Company): string[] {
     cons.push("Beperkte enterprise functies")
   }
 
-  return cons.slice(0, 3)
+  return cons.slice(0, 3) // Max 3 cons
 }
 
 function getKeyFeatures(company: Company): Record<string, boolean> {
@@ -139,7 +143,7 @@ export function ComparisonSection() {
 
         <div className="grid md:grid-cols-3 gap-8 mb-12">
           {topCompanies.map((company, index) => {
-            const isPopular = index === 0
+            const isPopular = index === 0 // First company (highest automation) is most popular
             const pros = getCompanyPros(company)
             const cons = getCompanyCons(company)
             const features = getKeyFeatures(company)
@@ -241,11 +245,9 @@ export function ComparisonSection() {
         </div>
 
         <div className="text-center">
-        <Button size="lg" variant="outline" className="text-[#4A90E2] border-[#4A90E2] hover:bg-[#EBF4FF]" asChild>
-  <a href="/vergelijking">
-    Bekijk Volledige Vergelijking van Alle 4 Providers
-  </a>
-</Button>  
+          <Button size="lg" variant="outline" className="text-[#4A90E2] border-[#4A90E2] hover:bg-[#EBF4FF]">
+            Bekijk Volledige Vergelijking van Alle 4 Providers
+          </Button>
           <p className="text-sm text-gray-600 mt-2">Inclusief gedetailleerde kostenberekening en feature matrix</p>
         </div>
       </div>

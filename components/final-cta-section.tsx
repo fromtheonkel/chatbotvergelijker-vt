@@ -1,3 +1,4 @@
+import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { ArrowRight, CheckCircle } from "lucide-react"
 
@@ -13,12 +14,16 @@ export function FinalCTASection() {
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-          <Button size="lg" className="bg-white text-[#2E5BBA] hover:bg-gray-100">
-            Start Gratis Vergelijking
-            <ArrowRight className="ml-2 h-5 w-5" />
+          <Button size="lg" className="bg-white text-[#2E5BBA] hover:bg-gray-100" asChild>
+            <Link href="/vergelijking">
+              Start Gratis Vergelijking
+              <ArrowRight className="ml-2 h-5 w-5" />
+            </Link>
           </Button>
-          <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-[#2E5BBA]">
-            Plan een Demo
+          <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-[#2E5BBA]" asChild>
+            <a href="#contact">
+              Plan een Demo
+            </a>
           </Button>
         </div>
 
