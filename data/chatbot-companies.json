@@ -81,83 +81,84 @@
     },
 
     {
-      "id": "certigon-maatwerk",
-      "name": "Certigon",
-      "product": "Maatwerk Chatbot Oplossing",
-      "logo": "/logos/certigon.png",
-      "location": "Nederland",
-      "founded": 2010,
-      "website": "https://chatbotontwikkeling.nl",
-      "description": "Volledig maatwerk chatbots met enterprise systeem integraties",
+      "id": "trengo-ai",
+      "name": "Trengo",
+      "product": "AI HelpMate",
+      "logo": "/logos/trengo.png",
+      "location": "Utrecht",
+      "founded": 2020,
+      "website": "https://trengo.com/nl",
+      "description": "Omnichannel AI chatbot die 80%+ van repetitieve gesprekken automatiseert",
 
       "pricing": {
         "setup_fee": {
-          "amount": "5000-25000",
+          "amount": 0,
           "currency": "EUR",
-          "note": "Maatwerk ontwikkeling, ook lease opties"
+          "note": "Geen setup kosten"
         },
         "monthly_fixed": {
-          "amount": "200-1000",
+          "amount": 205,
           "currency": "EUR",
-          "note": "Hosting, onderhoud en monitoring"
+          "note": "Boost plan, maandelijks gefactureerd"
         },
         "monthly_variable": {
-          "per_conversation": 0.02,
-          "development_hours": 75,
+          "per_conversation": 0.05,
+          "per_extra_user": 25,
           "currency": "EUR",
-          "note": "Doorlopende ontwikkeling beschikbaar"
+          "included_conversations": "300 per maand",
+          "ai_surcharge": "Voor WhatsApp, Voice en SMS"
         },
         "development_support": {
           "customer_success_manager": false,
           "onboarding_included": true,
           "training_included": true,
-          "lease_options": true
+          "ai_playground": true
         }
       },
 
       "functionality": {
-        "ai_model": "Custom/GPT hybrid",
-        "agents_included": "Op maat",
-        "team_members": "Onbeperkt",
+        "ai_model": "GPT-4/Custom hybrid",
+        "agents_included": "AI HelpMate",
+        "team_members": "10 gebruikers",
         "url_crawling": "Onbeperkt",
         "natural_language": true,
         "sentiment_analysis": true,
-        "multi_channel": ["Website", "WhatsApp", "Facebook", "SMS", "Skype"],
-        "languages": ["Nederlands", "Engels"],
-        "integrations": ["Exact", "AFAS", "Microsoft Dynamics", "Hubspot", "Salesforce", "Custom API"],
+        "multi_channel": ["Website", "WhatsApp", "Facebook", "Instagram", "Email", "SMS"],
+        "languages": ["Nederlands", "Engels", "26 talen ondersteuning"],
+        "integrations": ["API", "Zapier", "CRM", "Help Center", "Webhooks"],
         "analytics": true,
         "live_handover": true,
-        "voice_support": false,
+        "voice_support": true,
         "custom_training": true,
-        "backend_integration": true,
-        "data_processing": true,
-        "custom_databases": true
+        "ai_actions": true,
+        "suggested_replies": true,
+        "autopilot_mode": true
       },
 
       "service": {
-        "implementation_time": "6-12 weken",
+        "implementation_time": "1-2 weken",
         "sla_uptime": "99%",
-        "support_hours": "Kantooruren",
+        "support_hours": "24/7",
         "support_language": "Nederlands",
         "dedicated_manager": false,
         "training_included": true,
-        "maintenance_included": "Optioneel",
-        "strategic_partnership": true
+        "maintenance_included": true,
+        "ai_playground": true
       },
 
       "compliance": {
         "gdpr": true,
-        "data_location": "Nederland",
+        "data_location": "EU",
         "privacy_audit": false,
         "enterprise_security": true
       },
 
       "target_company_size": ["MKB", "Enterprise"],
-      "industries": ["Productie", "Logistiek", "B2B Services", "Manufacturing"],
-      "automation_level": "80-90%",
-      "rating": 4.2,
-      "reviews_count": 45,
-      "notable_clients": ["Diverse productie bedrijven", "Logistieke dienstverleners"]
+      "industries": ["Retail", "E-commerce", "Automotive", "Banking", "Hospitality", "Energy"],
+      "automation_level": "80-85%",
+      "rating": 4.3,
+      "reviews_count": 89,
+      "notable_clients": ["BAS World", "Betersport", "Billink", "Valk Exclusief Group"]
     },
 
     {

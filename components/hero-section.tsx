@@ -7,7 +7,7 @@ export function HeroSection() {
         <div className="text-center">
           <div className="flex justify-center mb-8">
             <div className="bg-[#D5EDDB] p-4 rounded-full">
-              <Bot className="h-12 w-12 text-[#2ECC71]" />
+              <Bot className="h-12 w-12 text-[#2ECC71] animate-pulse" />
             </div>
           </div>
 
@@ -17,7 +17,7 @@ export function HeroSection() {
 
           <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
             Vergelijk de beste chatbot providers in Nederland. Ontdek welke oplossing het beste past bij jouw bedrijf
-            met onze uitgebreide vergelijking van functies, prijzen en klantervaringen.
+            met onze uitgebreide vergelijking van functies, prijzen en klantervaringen om je klantenservice te verbeteren.
           </p>
 
           <div className="mt-12 text-lg text-gray-600 max-w-4xl mx-auto">

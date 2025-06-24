@@ -50,9 +50,11 @@ function getCompanyPros(company: Company): string[] {
     pros.push("100+ talen ondersteuning")
   }
 
-  if (company.id === "certigon-maatwerk") {
-    pros.push("Volledig maatwerk oplossing")
-    pros.push("Enterprise systeem integraties")
+  if (company.id === "trengo-ai") {
+    pros.push("Omnichannel unified inbox")
+    pros.push("80%+ automatisering bewezen")
+    pros.push("AI Playground voor testen")
+    pros.push("26 talen ondersteuning")
   }
 
   if (company.id === "chatkracht") {
@@ -97,8 +99,9 @@ function getCompanyCons(company: Company): string[] {
     cons.push("Geen sentiment analyse")
   }
 
-  if (company.id === "certigon-maatwerk") {
-    cons.push("Complexe setup vereist")
+  if (company.id === "trengo-ai") {
+    cons.push("Beperkt tot 10 gebruikers")
+    cons.push("Extra kosten voor AI usage")
   }
 
   if (company.id === "ai-chatbot-nl") {
@@ -225,8 +228,11 @@ export function ComparisonSection() {
                           : "text-[#4A90E2] border border-[#4A90E2] hover:bg-[#EBF4FF]"
                       }`}
                       variant={isPopular ? "default" : "outline"}
+                      asChild
                     >
-                      Meer Informatie
+                      <a href="/contact">
+                        Meer Informatie
+                      </a>
                     </Button>
                     <Button variant="ghost" size="sm" className="w-full text-gray-600 hover:text-[#2ECC71]" asChild>
                       <a href={company.website} target="_blank" rel="noopener noreferrer">

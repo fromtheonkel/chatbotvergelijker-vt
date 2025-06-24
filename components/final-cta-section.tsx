@@ -20,11 +20,7 @@ export function FinalCTASection() {
               <ArrowRight className="ml-2 h-5 w-5" />
             </Link>
           </Button>
-          <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-[#2E5BBA]" asChild>
-            <a href="#contact">
-              Plan een Demo
-            </a>
-          </Button>
+          
         </div>
 
         <div className="grid md:grid-cols-3 gap-6 max-w-3xl mx-auto">

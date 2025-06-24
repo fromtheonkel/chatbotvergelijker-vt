@@ -32,11 +32,6 @@ export function Footer() {
                 </a>
               </li>
               <li>
-                <a href="#testimonials" className="text-gray-300 hover:text-[#2ECC71] transition-colors">
-                  Reviews
-                </a>
-              </li>
-              <li>
                 <a href="/blog" className="text-gray-300 hover:text-[#2ECC71] transition-colors">
                   Blog
                 </a>
@@ -47,24 +42,19 @@ export function Footer() {
           {/* Support */}
           <div>
             <h4 className="text-lg font-semibold mb-4">Support</h4>
-            <ul className="space-y-2">
-              <li>
-                <a href="#" className="text-gray-300 hover:text-[#2ECC71] transition-colors">
-                  Help Center
-                </a>
-              </li>
+            <ul className="space-y-2">              
               <li>
                 <a href="#" className="text-gray-300 hover:text-[#2ECC71] transition-colors">
                   Veelgestelde Vragen
                 </a>
               </li>
               <li>
-                <a href="#" className="text-gray-300 hover:text-[#2ECC71] transition-colors">
+                <a href="/contact" className="text-gray-300 hover:text-[#2ECC71] transition-colors">
                   Contact
                 </a>
               </li>
               <li>
-                <a href="#" className="text-gray-300 hover:text-[#2ECC71] transition-colors">
+                <a href="/privacy" className="text-gray-300 hover:text-[#2ECC71] transition-colors">
                   Privacy Beleid
                 </a>
               </li>
