@@ -1,12 +1,28 @@
 import type { Metadata } from 'next'
-import Script from 'next/script'
-import CookieConsentBanner from '@/components/cookie-consent-banner'
 import './globals.css'
+import { Analytics } from '@vercel/analytics/react'
+import { ExitSurvey } from '@/components/exit-survey'
 
 export const metadata: Metadata = {
-  title: 'Mijn Chatbot - AI Chatbot Service',
-  description: 'Professionele AI chatbot service voor uw bedrijf. Verbeter klantenservice en automatiseer gesprekken.',
-  generator: 'v0.dev',
+  title: 'Lokaal AI Draaien — Jouw Gids voor LLM\'s op Eigen Hardware | LokaalAI',
+  description: 'Leer hoe je je eigen AI draait op je computer. Volledig privé, gratis en zonder beperkingen. Stap-voor-stap uitleg met Ollama, hardware tips en modelkeuze.',
+  keywords: ['lokaal AI draaien', 'LLM lokaal', 'Ollama', 'eigen AI', 'privacy AI', 'lokale taalmodellen', 'GPU AI', 'open source AI'],
+  openGraph: {
+    title: 'Lokaal AI Draaien — Jouw Gids voor LLM\'s op Eigen Hardware',
+    description: 'Draai je eigen AI, volledig privé. Gratis gids met hardware tips, modelkeuze en stap-voor-stap installatie.',
+    type: 'website',
+    locale: 'nl_NL',
+    siteName: 'LokaalAI',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Lokaal AI Draaien — Jouw Gids',
+    description: 'Draai je eigen AI, volledig privé. Gratis gids met hardware tips en stap-voor-stap installatie.',
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 }
 
 export default function RootLayout({
@@ -17,31 +33,24 @@ export default function RootLayout({
   return (
     <html lang="nl">
       <head>
-        {/* Google Tag Manager */}
-        <Script id="gtm-script" strategy="afterInteractive">
-          {`
-            (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-            })(window,document,'script','dataLayer','GTM-54RDN4QD');
-          `}
-        </Script>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'WebSite',
+              name: 'LokaalAI',
+              description: 'Jouw gids voor het draaien van AI op eigen hardware',
+              url: 'https://mijnchatbot.nl',
+              inLanguage: 'nl',
+            }),
+          }}
+        />
       </head>
       <body>
-        {/* Google Tag Manager (noscript) */}
-        <noscript>
-          <iframe 
-            src="https://www.googletagmanager.com/ns.html?id=GTM-54RDN4QD"
-            height="0" 
-            width="0" 
-            style={{display: 'none', visibility: 'hidden'}}
-          />
-        </noscript>
-        
         {children}
-        {/* Cookie Consent Banner */}
-        <CookieConsentBanner />
+        <Analytics />
+        <ExitSurvey />
       </body>
     </html>
   )

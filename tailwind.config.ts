@@ -20,16 +20,12 @@ const config: Config = {
     },
     extend: {
       colors: {
-        // Custom colors from the logo
-        "chatbot-green": "#2ECC71",
-        "chatbot-green-dark": "#27AE60",
-        "chatbot-green-light": "#D5EDDB",
-        "chatbot-green-lighter": "#E8F8F5",
-        "chatbot-blue": "#4A90E2",
-        "chatbot-blue-dark": "#2E5BBA",
-        "chatbot-blue-light": "#EBF4FF",
-        "chatbot-red": "#E74C3C",
-        "chatbot-gray": "#7F8C8D",
+        // Brand colors
+        "brand": "#2ecc71",
+        "brand-dark": "#27ae60",
+        "brand-light": "#eafaf1",
+        "dark": "#1a1a2e",
+        "dark-light": "#16213e",
 
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
