@@ -3,9 +3,10 @@ import { Footer } from "@/components/footer"
 import Image from "next/image"
 import Link from "next/link"
 import {
-  Shield, Wifi, WifiOff, DollarSign, Infinity,
+  Shield, WifiOff, DollarSign, Infinity,
   Download, Monitor, MessageSquare, Globe, Cpu,
   HardDrive, Zap, ChevronRight, Terminal, ArrowRight,
+  Search, FileText,
 } from "lucide-react"
 import {
   Accordion,
@@ -289,51 +290,87 @@ export default function HomePage() {
               </p>
             </div>
 
-            <div className="max-w-2xl mx-auto space-y-8">
+            <div className="max-w-2xl mx-auto space-y-10">
               {[
                 {
                   step: "1",
                   icon: Download,
-                  title: "Download Ollama",
-                  desc: "Ga naar ollama.com en download de versie voor jouw besturingssysteem (Windows, macOS of Linux).",
+                  title: "Download en installeer Ollama",
+                  desc: "Ga naar ollama.com en download de versie voor jouw besturingssysteem — Windows, macOS of Linux. De installer werkt net als elk ander programma. Na installatie draait Ollama als achtergrondservice, zodat je het altijd klaar hebt staan.",
+                  note: "Tip: op macOS verschijnt Ollama als icoontje in je menubalk.",
                 },
                 {
                   step: "2",
                   icon: Terminal,
                   title: "Open je terminal",
-                  desc: "Op Windows: zoek naar 'Terminal' of 'PowerShell'. Op Mac: open 'Terminal' vanuit Applications.",
+                  desc: "De terminal is het venster waar je commando's typt.",
+                  bullets: [
+                    "Windows: druk op Win + R, typ powershell en druk Enter — of zoek naar 'Windows Terminal' in het startmenu.",
+                    "macOS: open Spotlight (Cmd + Spatie), typ Terminal en druk Enter.",
+                    "Linux: gebruik je favoriete terminalemulator (Ctrl + Alt + T werkt op de meeste distro's).",
+                  ],
                 },
                 {
                   step: "3",
                   icon: Monitor,
-                  title: "Download een model",
-                  desc: "Typ het volgende commando om Llama 3 te downloaden en te starten:",
-                  code: "ollama run llama3",
+                  title: "Download en start een model",
+                  desc: "Typ één commando om een model te downloaden en meteen te starten. Ollama downloadt het model automatisch (eenmalig) en start dan de chat:",
+                  code: "ollama run llama3.2",
+                  note: "Llama 3.2 (3B) is ~2 GB en werkt op bijna elke computer. Wil je meer? Probeer llama3.1:8b voor betere kwaliteit of mistral voor snelheid.",
                 },
                 {
                   step: "4",
                   icon: MessageSquare,
-                  title: "Start met chatten",
-                  desc: "Dat is alles! Je kunt nu direct vragen stellen in je terminal. Het model draait volledig op jouw computer.",
+                  title: "Chat direct in de terminal",
+                  desc: "Zodra het model geladen is, zie je een prompt. Typ je vraag en druk op Enter — het model antwoordt meteen. Alles gebeurt lokaal op jouw computer, niets gaat naar buiten.",
+                  note: "Stop de chat met Ctrl + D of typ /bye.",
                 },
                 {
                   step: "5",
                   icon: Globe,
-                  title: "Optioneel: installeer Open WebUI",
-                  desc: "Wil je een mooie ChatGPT-achtige interface? Installeer Open WebUI voor een visuele chatervaring met bestanduploads en chatgeschiedenis.",
+                  title: "Installeer Open WebUI voor een mooie interface",
+                  desc: "Liever een ChatGPT-achtige interface in je browser? Open WebUI biedt bestanduploads, chatgeschiedenis en modelwisseling — allemaal lokaal. Zorg dat Docker geïnstalleerd is en voer dan uit:",
+                  code: "docker run -d -p 3000:8080 --add-host=host.docker.internal:host-gateway -v open-webui:/app/backend/data --name open-webui ghcr.io/open-webui/open-webui:main",
+                  note: "Open daarna http://localhost:3000 in je browser. Geen Docker? Open WebUI heeft ook een pip-installatie.",
+                },
+                {
+                  step: "6",
+                  icon: Search,
+                  title: "Koppel lokale websearch met SearXNG",
+                  desc: "Wil je dat je AI ook het web kan raadplegen — zonder dat Google of Bing jouw zoekopdrachten zien? Installeer SearXNG als lokale zoekmachine en koppel die aan Open WebUI. Start SearXNG met Docker:",
+                  code: "docker run -d -p 8080:8080 --name searxng searxng/searxng",
+                  note: "Ga daarna in Open WebUI naar Instellingen → Websearch, kies SearXNG en vul http://localhost:8080 in. Je AI zoekt nu privé op het web.",
+                },
+                {
+                  step: "7",
+                  icon: FileText,
+                  title: "Doorzoek je eigen documenten (RAG)",
+                  desc: "Met Retrieval Augmented Generation (RAG) kan je AI door jouw eigen bestanden zoeken — PDF's, Word-documenten, notities. Upload documenten in Open WebUI en stel er vragen over. Perfect voor het analyseren van contracten, rapporten of handboeken zonder dat je data ergens heen gaat.",
+                  note: "In Open WebUI: klik op het paperclip-icoontje in de chat om een bestand te uploaden. Het model leest het document en beantwoordt vragen op basis van de inhoud.",
                 },
               ].map((item, i) => (
-                <div key={i} className="flex gap-4">
+                <div key={i} className="flex gap-5">
                   <div className="flex-shrink-0 w-10 h-10 bg-brand rounded-full flex items-center justify-center text-white font-bold text-sm">
                     {item.step}
                   </div>
                   <div className="flex-1 pt-1">
-                    <h3 className="font-semibold text-dark text-lg mb-1">{item.title}</h3>
+                    <div className="flex items-center gap-2 mb-2">
+                      <item.icon className="w-5 h-5 text-brand" />
+                      <h3 className="font-semibold text-dark text-lg">{item.title}</h3>
+                    </div>
                     <p className="text-sm text-muted-foreground leading-relaxed mb-2">{item.desc}</p>
-                    {item.code && (
-                      <code className="block bg-dark text-brand font-mono text-sm px-4 py-3 rounded-lg">
+                    {"bullets" in item && item.bullets && (
+                      <ul className="text-sm text-muted-foreground space-y-1 mb-2 ml-4 list-disc">
+                        {item.bullets.map((b, j) => <li key={j}>{b}</li>)}
+                      </ul>
+                    )}
+                    {"code" in item && item.code && (
+                      <code className="block bg-dark text-brand font-mono text-xs px-4 py-3 rounded-lg mb-2 break-all">
                         $ {item.code}
                       </code>
+                    )}
+                    {"note" in item && item.note && (
+                      <p className="text-xs text-muted-foreground/80 italic">{item.note}</p>
                     )}
                   </div>
                 </div>
